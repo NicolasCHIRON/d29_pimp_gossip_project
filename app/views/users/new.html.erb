@@ -1,0 +1,38 @@
+</br><h1> Création de compte</h1>
+
+  <center>
+    <%= form_tag("/users", method: :post) do %>
+
+      <%= label_tag "Prénom :" %>
+        <%= text_field_tag "first_name" %>
+      <br/>
+
+      <%= label_tag 'Nom de famille :' %>
+        <%= text_field_tag 'last_name' %>
+      <br/>
+
+      <%= label_tag 'Description :' %>
+        <%= text_field_tag 'description' %>
+      <br/>
+
+      <%= label_tag 'Adresse mail :' %>
+        <%= text_field_tag 'email' %>
+      <br/>
+
+      <%= label_tag 'Age :' %>
+        <%= text_field_tag 'age' %>
+      <br/>
+
+      <%= label_tag 'Mot de passe :' %>
+        <%= text_field_tag 'password' %>
+      <br/>
+
+      <%= label_tag 'Confirmation mot de passe :' %>
+        <%= text_field_tag 'password_confirmation' %>
+      <br/>
+
+      <%= submit_tag "Créer son compte", data: {turbo:false} %>
+
+    <% end %>
+
+  </center>

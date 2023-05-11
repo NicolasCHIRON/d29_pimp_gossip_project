@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :comments, except: [:show, :index, :new]
   end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :new, :create]
   resources :cities, only: [:show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
