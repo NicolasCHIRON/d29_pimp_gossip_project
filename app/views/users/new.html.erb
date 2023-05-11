@@ -1,37 +1,30 @@
-</br><h1> Création de compte</h1>
+</br><h1> Création de compte</h1></br>
 
   <center>
     <%= form_tag("/users", method: :post) do %>
 
-      <%= label_tag "Prénom :" %>
-        <%= text_field_tag "first_name" %>
-      <br/>
+      <%= text_field_tag "first_name", nil, placeholder:"Prénom...", :size=>"50" %>
+      <br/><br/>
 
-      <%= label_tag 'Nom de famille :' %>
-        <%= text_field_tag 'last_name' %>
-      <br/>
+      <%= text_field_tag 'last_name', nil, placeholder:"Nom de famille...", :size=>"50" %>
+      <br/><br/>
 
-      <%= label_tag 'Description :' %>
-        <%= text_field_tag 'description' %>
-      <br/>
+      <%= text_field_tag 'description', nil, placeholder:"Description...", :size=>"50" %>
+      <br/><br/>
 
-      <%= label_tag 'Adresse mail :' %>
-        <%= text_field_tag 'email' %>
-      <br/>
+      <%= text_field_tag 'email', nil, placeholder:"Adresse mail...", :size=>"50" %>
+      <br/><br/>
 
-      <%= label_tag 'Age :' %>
-        <%= text_field_tag 'age' %>
-      <br/>
+      <%= text_field_tag 'age', nil, placeholder:"Age...", :size=>"50" %>
+      <br/><br/>
 
-      <%= label_tag 'Mot de passe :' %>
-        <%= text_field_tag 'password' %>
-      <br/>
+      <%= text_field_tag 'password', nil, placeholder:"Mot de passe...", :size=>"50" %>
+      <br/><br/>
 
-      <%= label_tag 'Confirmation mot de passe :' %>
-        <%= text_field_tag 'password_confirmation' %>
-      <br/>
+      <%= text_field_tag 'password_confirmation', nil, placeholder:"Confirmation du mot de passe...", :size=>"50" %>
+      <br/><br/>
 
-      <%= submit_tag "Créer son compte", data: {turbo:false} %>
+      <%= submit_tag "Créer son compte", class:"spec_btn" , data: {turbo:false} %>
 
     <% end %>
 
