@@ -1,0 +1,25 @@
+</br></br>
+
+<div class="section_our_solution justify-content-center">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="our_solution_category">
+        <div class="solution_cards_box">
+          <div class="solution_card">
+            <div class="solu_title">
+              <h3> Vous êtes bien sur la page de l'utilisateur n°<%= params[:id] %> </h3>
+            </div>
+            <div class="solu_description text-center">
+            <p> Prénom : <%= @user.first_name %></p>
+            <p> Nom de famille : <%= @user.last_name %></p>
+            <p> Description : <%= @user.description %></p>
+            <p> E-mail de contact : <%= @user.email %></p>
+            <p> Age : <%= @user.age %></p>
+            <%= button_to "Ville : #{@user.city.name}", city_path(@user.city), class:"btn btn-success", method: :get %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

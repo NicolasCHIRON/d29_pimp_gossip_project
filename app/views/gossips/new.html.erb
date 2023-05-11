@@ -1,0 +1,18 @@
+<h1>Bienvenue dans la page de création de potins</h1>
+
+  <center>
+    <%= form_tag('/gossips', method: :post) do %>
+
+      <%= label_tag 'Titre du potin' %></br>
+        <div><%= text_field_tag 'title' %>
+      <br/> <br/>
+
+      <%= label_tag 'Et "keskiladi"!' %></br>
+        </div><%= text_area_tag 'content' %></div>
+      <br/> <br/>
+
+      <%= submit_tag "Ajouter un nouveau potin", data: {turbo:false} %>
+
+      <% end %>
+
+    </center>
