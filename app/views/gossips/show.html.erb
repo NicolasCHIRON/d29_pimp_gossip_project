@@ -15,8 +15,11 @@
               <p class="font-weight-bold"> Rédigé par <%= @gossip.user.first_name %> <%= @gossip.user.last_name %> qui habite à <%= @gossip.user.city.name %></p>
               <%= button_to "Plus d'informations sur l'auteur (sa vie, ses rêves, ...)", user_path(@gossip.user.id), class:"spec_btn", method: :get %>
               <p> Date de création du potin : <%= @gossip.created_at %></p>
-              <%= button_to "Editer le potin", edit_gossip_path, method: :get %>
-              <%= button_to "Supprimer le potin", gossip_path, form: { data: { turbo_confirm: "Veux-tu supprimer ce potin ?" } }, style:"display: inline;", method: :delete %>
+              <% if current_user == @gossip.user %>
+                <%= button_to "Editer le potin", edit_gossip_path, method: :get %>
+                <%= button_to "Supprimer le potin", gossip_path, form: { data: { turbo_confirm: "Veux-tu supprimer ce potin ?" } }, style:"display: inline;", method: :delete %>
+              <% else %>
+              <% end %>
             </div>
           </div>
         </div>
@@ -50,7 +53,10 @@
           <div class="card-body">
             <h5 class="card-title"><%= comment.user.first_name %> <%= comment.user.last_name %></h5>
             <p class="card-text"><%= comment.content %></p>
-            <%= button_to "Editer le commentaire",  edit_gossip_comment_path(@gossip, comment.id), class:"solu_description spec_btn", method: :get %>
+            <% if current_user == comment.user %>
+              <%= button_to "Editer le commentaire",  edit_gossip_comment_path(@gossip, comment.id), class:"solu_description spec_btn", method: :get %>
+            <% else %>
+            <% end %>
           </div>
         </div>
       </div>
