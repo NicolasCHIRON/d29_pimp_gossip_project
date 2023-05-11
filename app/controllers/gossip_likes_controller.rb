@@ -3,13 +3,16 @@ class GossipLikesController < ApplicationController
 
   def create
     @like = GossipLike.new(user_id: current_user.id, gossip_id: params[:gossip_id])
-    if (@like.save)
+    if @like.save
       redirect_back(fallback_location: root_path)
     end
   end
 
   def destroy
-
+    @like = GossipLike.find_by(user_id: current_user.id, gossip_id: params[:gossip_id].to_i)
+    if @like.destroy
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   private

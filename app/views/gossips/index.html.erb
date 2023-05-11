@@ -79,7 +79,7 @@
                     <% if already_exist?(gossip) == false %>
                       <%= button_to "❤ Like ❤ ", gossip_gossip_likes_url(gossip.id), class:"spec_btn" %>
                     <% else %>
-                      <button type="button" class="spec_btn"><%= link_to "💩 Unlike 💩", user_path(gossip.user), class:"linkoff", method: :delete %></button>
+                      <%= button_to "💩 Unlike 💩", gossip_gossip_like_path(gossip_id: gossip.id, id: current_user.id), method: :delete, class:"spec_btn" %>
                     <% end %>
                     <div class=small> 
                       Nombre de like : <%= gossip.gossip_likes.count %>
