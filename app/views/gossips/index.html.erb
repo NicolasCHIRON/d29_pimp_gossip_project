@@ -23,7 +23,7 @@
                 <div class="solution_card">
                   <div class="hover_color_bubble"></div>
                   <div class="so_top_icon">
-                    <svg id="Layer_1" enable-background="new 0 0 512 512" height="40" viewBox="0 0 512 512" width="40" xmlns="http://www.w3.org/2000/svg">
+                    <svg id="Layer_1" enable-background="new 0 0 512 512" height="30" viewBox="0 0 512 512" width="30" xmlns="http://www.w3.org/2000/svg">
                       <g>
                         <g>
                           <g>
@@ -76,6 +76,14 @@
                     </p>
                     <button type="button" class="spec_btn"><%= link_to "Voir le Gossip", gossip_path(gossip), class:"linkoff"%></button>
                     <button type="button" class="spec_btn"><%= link_to "A propos de l'auteur", user_path(gossip.user), class:"linkoff" %></button>
+                    <% if already_exist?(gossip) == false %>
+                      <%= button_to "❤ Like ❤ ", gossip_gossip_likes_url(gossip.id), class:"spec_btn" %>
+                    <% else %>
+                      <button type="button" class="spec_btn"><%= link_to "💩 Unlike 💩", user_path(gossip.user), class:"linkoff", method: :delete %></button>
+                    <% end %>
+                    <div class=small> 
+                      Nombre de like : <%= gossip.gossip_likes.count %>
+                    </div>
                   </div>
                 </div>
               </div>

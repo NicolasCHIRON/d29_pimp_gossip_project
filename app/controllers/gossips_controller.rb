@@ -58,7 +58,7 @@ class GossipsController < ApplicationController
 
   def authenticate_author
     unless current_user == Gossip.find(params[:id]).user
-      flash[:alert] = "Vous ne pouvez pas modifier ou supprimer un potin créé par un nouvel utilisateur"
+      flash[:alert] = "Vous ne pouvez pas modifier ou supprimer un potin créé par un autre utilisateur."
       redirect_to root_path
     end
   end
