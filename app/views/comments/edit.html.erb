@@ -9,14 +9,11 @@
       </div>
 
       <div class="form_group" data-turbo=false>
-        <button type="submit" class="btn btn-success" method: :patch> Modifier le commentaire</button> 
+        <button type="submit" class="spec_btn" method: :patch> Modifier le commentaire</button> 
   
       </div>
-      <div>
-      </div>
+
     <% end %>
 
-
-  <%= button_to "Supprimer le commentaire", gossip_comment_path, class:"btn btn-danger", form: { data: { turbo_confirm: "Veux-tu supprimer ce commentaire ?" } }, style:"display: inline;", method: :delete %>
-
+    <%= button_to "Supprimer le commentaire", gossip_comment_path, class:"btn btn-danger", form: { data: { turbo_confirm: "Veux-tu supprimer ce commentaire ?" } }, style:"display: inline;border-radius: 15px;", method: :delete %>
   </center>

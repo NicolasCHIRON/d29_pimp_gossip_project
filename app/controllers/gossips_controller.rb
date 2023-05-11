@@ -1,5 +1,5 @@
 class GossipsController < ApplicationController
-  before_action :authenticate_user, only: [:new, :create]
+  before_action :authenticate_user, only: [:new, :create, :show]
   before_action :authenticate_author, only: [:edit, :update, :destroy]
 
   def index
@@ -51,7 +51,7 @@ class GossipsController < ApplicationController
 
   def authenticate_user
     unless current_user
-      flash[:alert] = "Merci de vous connecter pour créer un nouveau potin."
+      flash[:alert] = "Merci de vous connecter pour voir les potins ou en créer un nouveau."
       redirect_to new_session_path
     end
   end
