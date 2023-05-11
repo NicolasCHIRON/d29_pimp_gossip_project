@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    @session.delete(:user_id)
+    session.delete(:user_id)
+    redirect_to '/', notice: "Au revoir, et à bientôt !"
   end
 end
