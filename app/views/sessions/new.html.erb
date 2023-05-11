@@ -1,0 +1,18 @@
+</br><h1> Se connecter</h1>
+
+  <center>
+    <%= form_tag("/sessions", method: :post) do %>
+
+      <%= label_tag "Adresse mail :" %>
+        <%= text_field_tag "email" %>
+      <br/>
+
+      <%= label_tag 'Mot de passe :' %>
+        <%= text_field_tag 'password' %>
+      <br/>
+
+      <%= submit_tag "Se connecter", data: {turbo:false} %>
+
+    <% end %>
+
+  </center>
