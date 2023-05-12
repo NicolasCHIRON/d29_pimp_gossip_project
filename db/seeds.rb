@@ -21,7 +21,8 @@ GossipLike.destroy_all
 end
 
 10.times do
-  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Lorem.paragraph, email: Faker::Internet.email, age: rand(16..122), city_id: City.all.sample.id)
+  @password = Faker::Lorem.characters(number: 10)
+  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Lorem.paragraph, email: Faker::Internet.email, age: rand(16..122),password: @password ,password_confirmation:@password, city_id: City.all.sample.id)
 end
 
 20.times do
