@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    puts params
     @user = User.new(first_name: params[:first_name], last_name: params[:last_name], description: params[:description], email: params[:email], age: params[:age], city_id: City.all.sample.id, password: params[:password], password_confirmation: params[:password_confirmation])
     if @user.save
       flash[:notice] = 'Votre compte a bien été créé, bienvenue !'
